@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>DevExtreme Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.css" />
+
+    <!--
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.blue.light.css" />    
+ -->
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+
+    <script src="https://cdn3.devexpress.com/jslib/21.1.6/js/dx.all.js"></script>
+
+    <script src="utils.js"></script>
+    <script src="baseobject.js"></script>
+    <script src="component.js"></script>
+    <script src="view.js"></script>
+    <script src="listview.js"></script>
+    <script src="templatebuilder.js"></script>
+    <script src="template.js"></script>
+    <script src="widget.js"></script>
+    <script src="list.js"></script>
+    <script src="grid.js"></script>
+    <script src="form.js"></script>
+    <script src="label.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<div class="vertical-content light-gray height-100pct">
+    <div class="height-25"></div>
+    <div class="fill-space horizontal-content height-100pct">
+        <div class="width-250" style="width: 0px;"></div>
+        <div class="fill-space vertical-content height-100pct" id="app-view"> </div>
+    </div>
+</div>
+
+<template id="template-list">
+    <div class="padding-10 light-blue">
+        <div class="-form"></div>
+        <div class="-list" ></div>
+    </div>
+</template>
+
+<script>
+    $(function() {
+
+        let template = document.getElementById("template-list");
+        let clone = template.content.cloneNode(true);
+        let form = clone.querySelector(".-form");
+        let list = clone.querySelector(".-list")
+        document.getElementById("app-view").appendChild(clone);
+
+        /*        
+                let clone = template.content.cloneNode(true);
+                let form = clone.getElementsByClassName("-form")[0];
+                document.getElementById("app-view").appendChild(clone);
+                */
+
+        $(form).dxForm({
+            width: 800,
+            formData: {
+                curso: "San Clemente, Sociales, 3 B, tarde",
+                materia: "Química",
+                añoLectivo: 2021,
+                periodo: "1 trimestre"
+            },
+            items: [{
+                itemType: "group",
+                colCount: 1,
+                items: [{
+                    dataField: "curso",
+                    editorOptions: {},
+                }, {}]
+            }, {
+                itemType: "group",
+                colCount: 3,
+                items: [{
+                    dataField: "añoLectivo",
+                    editorOptions: {
+                        width: 100
+                    }
+                }, {
+                    dataField: "periodo",
+                    label: {
+                        text: "Período"
+                    },
+                    editorOptions: {
+                        width: 150
+                    }
+                }, {
+                    dataField: "materia"
+                }]
+            }]
+        })
+
+        $(list).dxDataGrid({
+            keyExpr: "id",
+            dataSource: dataSource(),
+            focusedRowEnabled: true,
+            focusedRowIndex: 0,
+            groupPanel: {
+                visible: true
+            },
+            elementAttr: {
+                class: "margin-top-15"
+            },
+            height: 500
+        })
+    })
+
+    function dataSource() {
+        const dataSource = [];
+        for (let i = 0; i < 100; i++) {
+            dataSource.push({
+                id: i,
+                lastName: "lastName " + i,
+                firstName: "firstName " + i
+            })
+        }
+        return dataSource;
+    }
+</script>
+
+<!-- 
+            <div class="padding-10">
+                <div id="form"></div>
+                <div id="grid" class="height-500" style="margin-top: -30px;"></div>
+            </div>
+
+-->
+
+<!-- 
+            <div class="padding-10" >
+                <div class="margin-bottom-5">Personas</div>
+                <div id="grid" class="height-500"></div>
+            </div>
+
+-->

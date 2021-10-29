@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>DevExtreme Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.teal.light.compact.css" />
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.carmine.compact.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.compact.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.teal.light.css" />        
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.blue.light.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.darkmoon.css" />
+ -->
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+
+    <script src="https://cdn3.devexpress.com/jslib/21.1.6/js/dx.all.js"></script>
+
+    <script src="utils.js"></script>
+    <script src="baseobject.js"></script>
+    <script src="component.js"></script>
+    <script src="view.js"></script>
+    <script src="listview.js"></script>
+    <script src="lookupview.js"></script>
+    <script src="appitemsview.js"></script>
+    <script src="templatebuilder.js"></script>
+    <script src="template.js"></script>
+    <script src="widget.js"></script>
+    <script src="list.js"></script>
+    <script src="grid.js"></script>
+    <script src="treeitems.js"></script>
+    <script src="form.js"></script>
+    <script src="button.js"></script>
+    <script src="label.js"></script>
+    <script src="popup.js"></script>
+    <script src="app.js"></script>
+    <script src="appitems.js"></script>
+    <script src="clase.js"></script>
+    <script src="claseconfiguration.js"></script>
+    <script src="claseform.js"></script>
+    <script src="claselist.js"></script>
+
+</head>
+
+<style>
+    /*    
+    .dx-datagrid-rowsview {
+        position: relative;
+    }
+*/
+</style>
+
+<body>
+
+    <div class="contenido-vertical alto-100pct">
+
+        <div class="llena-contenido contenido-vertical alto-100pct" id="app-view">
+            <!-- 
+            <div class="llena-contenido contenido-vertical alto-0 gris-claro padding-15" id="template">
+                <div class="margen-inferior-10" id="toolbar2"></div>
+                <div class="margen-inferior-5">Personas</div>
+                <div class="llena-contenido gris-claro" id="grid1"></div>
+                <div id="selecciona" class="margen-superior-5"></div>
+            </div>
+
+-->
+        </div>
+
+    </div>
+
+    <div id="popup"></div>
+
+</body>
+
+<script>
+    $(function() {
+
+        class PersonsView extends LookupView {
+
+            static DefineDataSource() {
+                return Ds.Configuration({
+                    path: "persona"
+                });
+            }
+
+        }
+
+        new ListView({
+            dataSource: Ds.Configuration({
+                path: "persona"
+            }),
+            label: {
+                text: "Personas"
+            },
+            toolbar: {
+
+            },
+            list: {
+                columns: [{
+                        dataField: "id",
+                        visible: false
+                    },
+                    "apellido",
+                    "nombres"
+                ]
+            },
+        }).renderPopup({
+
+        })
+
+        const template = createTemplate();
+        const toolbarElement = template.findElementByClass("-toolbar");
+        const labelElement = template.findElementByClass("-label");
+        const gridElement = template.findElementByClass("-grid");
+        const appViewElement = $("#app-view");
+        toolbarElement.dxToolbar({
+            items: [{
+                widget: "dxButton",
+                location: "before",
+                options: {
+                    icon: "airplane",
+                    text: "Viaje"
+                }
+            }, {
+                widget: "dxButton",
+                location: "before",
+                options: {
+                    icon: "add",
+                    text: "Agrega"
+                }
+            }]
+        })
+        labelElement.text("Personas");
+        gridElement.dxDataGrid({
+            keyExpr: "id",
+            dataSource: dataSource(),
+            focusedRowEnabled: true,
+            focusedRowIndex: 0,
+            allowColumnResizing: true,
+            allowColumnReordering: true,
+            searchPanel: {
+                visible: true,
+                searchVisibleColumnsOnly: true
+            },
+            scrolling: {
+                mode: "infinite"
+            },
+            height: 0
+        })
+
+        appViewElement.append(template.element());
+    })
+
+    function createTemplate() {
+        return new TemplateBuilder("llena-contenido contenido-vertical alto-0 gris-claro padding-15")
+            .addChild("-toolbar margen-inferior-5")
+            .addChild("-label margen-inferior-5")
+            .addChild("-grid llena-contenido gris-claro").build()
+    }
+
+    function dataSource() {
+        const dataSource = [];
+        for (let i = 0; i < 100; i++) {
+            dataSource.push({
+                id: i,
+                lastName: "lastName " + i,
+                firstName: "firstName " + i
+            })
+        }
+        return dataSource;
+    }
+</script>

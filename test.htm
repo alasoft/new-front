@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>DevExtreme Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.teal.light.compact.css" />
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.carmine.compact.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.compact.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.teal.light.css" />        
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.blue.light.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.darkmoon.css" />
+ -->
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+
+    <script src="https://cdn3.devexpress.com/jslib/21.1.6/js/dx.all.js"></script>
+
+    <script src="utils.js"></script>
+    <script src="baseobject.js"></script>
+    <script src="component.js"></script>
+    <script src="view.js"></script>
+    <script src="listview.js"></script>
+    <script src="appitemsview.js"></script>
+    <script src="templatebuilder.js"></script>
+    <script src="template.js"></script>
+    <script src="widget.js"></script>
+    <script src="list.js"></script>
+    <script src="grid.js"></script>
+    <script src="treeitems.js"></script>
+    <script src="form.js"></script>
+    <script src="button.js"></script>
+    <script src="label.js"></script>
+    <script src="app.js"></script>
+    <script src="appitems.js"></script>
+    <script src="clase.js"></script>
+    <script src="claseconfiguration.js"></script>
+    <script src="claseform.js"></script>
+    <script src="claselist.js"></script>
+
+</head>
+
+<script>
+    $(function() {
+
+        class Prueba {
+            metodo() {
+                console.log("Hi !");
+            }
+        }
+
+        new Prueba().metodo();
+
+        const clase = new window["Prueba"]();
+        clase.metodo();
+    })
+</script>

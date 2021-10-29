@@ -1,0 +1,86 @@
+{
+    "results": [{
+        "address_components": [{
+                "long_name": "86",
+                "short_name": "86",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Salta",
+                "short_name": "Salta",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "EXB",
+                "short_name": "EXB",
+                "types": [
+                    "locality",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Merlo",
+                "short_name": "Merlo",
+                "types": [
+                    "administrative_area_level_2",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Provincia de Buenos Aires",
+                "short_name": "Provincia de Buenos Aires",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Argentina",
+                "short_name": "AR",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "B1722",
+                "short_name": "B1722",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "formatted_address": "Salta 86, B1722 EXB, Provincia de Buenos Aires, Argentina",
+        "geometry": {
+            "location": {
+                "lat": -34.6748367,
+                "lng": -58.7279558
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": -34.6734877197085,
+                    "lng": -58.72660681970849
+                },
+                "southwest": {
+                    "lat": -34.6761856802915,
+                    "lng": -58.72930478029151
+                }
+            }
+        },
+        "partial_match": true,
+        "place_id": "ChIJ-QoZRfi_vJURsb10O_qgTKM",
+        "plus_code": {
+            "compound_code": "87GC+3R Merlo, Buenos Aires Province, Argentina",
+            "global_code": "48Q387GC+3R"
+        },
+        "types": [
+            "street_address"
+        ]
+    }],
+    "status": "OK"
+}

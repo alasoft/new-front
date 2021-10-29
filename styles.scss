@@ -1,0 +1,93 @@
+@mixin contenido-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin contenido-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin llena-contenido {
+    flex: 1;
+}
+
+@mixin alto-100pct {
+    height: 100%;
+}
+
+@mixin alto-0 {
+    height: 0px;
+}
+
+@mixin gris-claro {
+    background-color: lightgray;
+}
+
+#app {
+    @include contenido-vertical();
+    @include alto-100pct();
+}
+
+#app-body {
+    @include llena-contenido();
+    @include contenido-horizontal();
+    @include alto-0();
+    @include gris-claro();
+}
+
+#app-items {
+    @include contenido-vertical();
+}
+
+#app-view {
+    @include llena-contenido();
+    @include contenido-vertical();
+}
+
+html,
+body {
+    margin: 0;
+    font-family: Roboto, RobotoFallback, "Noto Kufi Arabic", Helvetica, Arial, sans-serif;
+    height: 100vh;
+}
+
+.contenido-horizontal {
+    @include contenido-horizontal();
+}
+
+.contenido-vertical {
+    @include contenido-vertical();
+}
+
+.llena-contenido {
+    @include llena-contenido();
+}
+
+.alto-100pct {
+    @include alto-100pct();
+}
+
+.alto-0 {
+    @include alto-0();
+}
+
+.padding-15 {
+    padding: 15px;
+}
+
+.margen-inferior-5 {
+    margin-bottom: 5px;
+}
+
+.gris-claro {
+    @include gris-claro();
+}
+
+.blanco-claro {
+    background-color: #fff;
+}
+
+.padding-right-0 {
+    padding-right: 0px;
+}

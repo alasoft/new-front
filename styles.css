@@ -1,0 +1,144 @@
+html,
+body {
+    margin: 0;
+    font-family: Roboto, RobotoFallback, "Noto Kufi Arabic", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    height: 100vh;
+}
+
+.contenido-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.llena-contenido {
+    flex: 1;
+}
+
+.alto-0 {
+    height: 0px;
+}
+
+.alto-100pct {
+    height: 100%;
+}
+
+.ancho-250 {
+    width: 250px;
+}
+
+.margen-inferior-5 {
+    margin-bottom: 5px;
+}
+
+.margen-superior-5 {
+    margin-top: 5px;
+}
+
+.margen-superior-10 {
+    margin-top: 10px;
+}
+
+.padding-15 {
+    padding: 15px;
+}
+
+.gris-claro {
+    background-color: lightgray;
+}
+
+.blanco-claro {
+    background-color: #fff;
+}
+
+.no-visible {
+    display: none;
+}
+
+.alinea-derecha {
+    justify-content: flex-end;
+}
+
+.alinea-izquierda {
+    justify-content: flex-start;
+}
+
+.dx-toolbar .dx-toolbar-items-container {
+    height: 30px;
+    overflow: visible;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#app-body {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    height: 0px;
+    background-color: lightgray;
+}
+
+#app-items {
+    display: flex;
+    flex-direction: column;
+}
+
+#app-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    height: 0px;
+}
+
+.lookup-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    height: 100%;
+}
+
+.form {
+    padding: 15px;
+    margin-bottom: 5;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+.list {
+    flex: 1
+}
+
+.label {
+    margin-bottom: 5px;
+}
+
+.toolbar {
+    margin-bottom: 5px;
+}
+
+.items-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 15px;
+    padding-right: 0px;
+    height: 0px;
+}
