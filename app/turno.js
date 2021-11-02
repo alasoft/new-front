@@ -1,0 +1,3 @@
+class Turno extends FixedTable {
+
+}

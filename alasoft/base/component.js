@@ -33,4 +33,8 @@ class Component extends BaseObject {
         return this._extraConfiguration;
     }
 
+    static Render() {
+        this.Instance().render();
+    }
+
 }

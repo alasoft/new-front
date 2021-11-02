@@ -1,0 +1,3 @@
+class Año extends FixedTable {
+
+}

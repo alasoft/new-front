@@ -51,7 +51,7 @@ class Grid extends List {
 
     onKeyDown(e) {
         if (e.event.key == "Insert") {
-            this.add()
+            this.add();
         }
     }
 

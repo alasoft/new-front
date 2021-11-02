@@ -9,6 +9,7 @@ class Template {
     }
 
     render(parent) {
+        parent.empty();
         this._element.appendTo(parent);
     }
 

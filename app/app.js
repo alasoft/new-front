@@ -12,12 +12,35 @@ class App {
         return $("#app-view");
     }
 
+    static ToolbarElement() {
+        return $("#app-toolbar");
+    }
+
     static ItemsElement() {
         return $("#app-items");
     }
 
     static ButtonItemsElement() {
         return $("#app-button-items");
+    }
+
+    static Start() {
+        AppToolbar.Render();
+        AppItems.Render();
+        Año.Load();
+        Turno.Load();
+    }
+
+    static ToggleItemsVisibility() {
+        Utils.ToggleVisibility(this.ItemsElement());
+    }
+
+    static Url(path) {
+        return this.BaseUrl() + "/" + path;
+    }
+
+    static BaseUrl() {
+        return "http://localhost:9090/escuelas";
     }
 
 }
