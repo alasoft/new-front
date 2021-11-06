@@ -1,0 +1,213 @@
+html,
+body {
+    margin: 0;
+    font-family: Roboto, RobotoFallback, "Noto Kufi Arabic", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    height: 100vh;
+}
+
+.vertical-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.full-content {
+    flex: 1;
+}
+
+.fixed-content {
+    flex: none;
+}
+
+.dx-toolbar .dx-toolbar-items-container {
+    height: 45px;
+    overflow: visible;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#app-body {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    height: 0px;
+    background-color: lightgray;
+}
+
+#app-items {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-right: -10px;
+}
+
+#app-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-items-view {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    padding-right: 10px;
+    height: 0px;
+}
+
+.list-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    height: 0px;
+}
+
+.form-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.lookup-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    height: 100%;
+}
+
+.form-style {
+    margin-bottom: 5;
+    background-color: #fff;
+    margin-bottom: 5px;
+    padding: 15px;
+}
+
+.list {
+    flex: 1
+}
+
+.label {
+    margin-bottom: 5px;
+}
+
+.toolbar {
+    margin-bottom: 5px;
+}
+
+.items-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 15px;
+    padding-right: 0px;
+    height: 0px;
+}
+
+.height-0 {
+    height: 0px;
+}
+
+.height-25 {
+    height: 25px;
+}
+
+.height-300 {
+    height: 300px;
+}
+
+.height-100pct {
+    height: 100%;
+}
+
+.width-150 {
+    width: 150px;
+}
+
+.width-250 {
+    width: 250px;
+}
+
+.width-350 {
+    width: 350px;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0px;
+}
+
+.margin-bottom-5 {
+    margin-bottom: 5px;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+
+.top-margin-0 {
+    margin-top: 0px;
+}
+
+.top-margin-5 {
+    margin-top: 5px;
+}
+
+.top-margin-10 {
+    margin-top: 10px;
+}
+
+.top-margin-15 {
+    margin-top: 15px;
+}
+
+.padding-15 {
+    padding: 15px;
+}
+
+.right-align {
+    justify-content: flex-end;
+}
+
+.left-align {
+    justify-content: flex-start;
+}
+
+.light-gray {
+    background-color: lightgray;
+}
+
+.light-white {
+    background-color: #fff;
+}
+
+.light-blue {
+    background-color: lightblue;
+}
+
+.light-green {
+    background-color: lightgreen;
+}
+
+.not-visible {
+    display: none;
+}
+
+.margin-left-10 {
+    margin-left: 10px;
+}

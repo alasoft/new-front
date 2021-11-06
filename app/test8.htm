@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>DevExtreme Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.teal.light.css" />
+    <!--
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.blue.light.css" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.teal.light.css" />        
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.carmine.compact.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.compact.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.teal.light.css" />        
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.blue.light.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.darkmoon.css" />
+ -->
+
+    <link rel="stylesheet" type="text/css" href="../alasoft/css/newstyles.css" />
+
+    <script src="https://cdn3.devexpress.com/jslib/21.1.6/js/dx.all.js"></script>
+
+    <script src="../alasoft/base/utils.js"></script>
+    <script src="../alasoft/base/baseobject.js"></script>
+    <script src="../alasoft/base/template.js"></script>
+    <script src="../alasoft/base/templatebuilder.js"></script>
+    <script src="../alasoft/base/component.js"></script>
+
+    <script src="../alasoft/datasource/datasource.js"></script>
+    <script src="../alasoft/datasource/arraydatasource.js"></script>
+
+    <script src="../alasoft/views/view.js"></script>
+    <script src="../alasoft/views/listview.js"></script>
+    <script src="../alasoft/views/formlistview.js"></script>
+    <script src="../alasoft/views/popupview.js"></script>
+    <script src="../alasoft/views/formview.js"></script>
+    <script src="../alasoft/views/lookupview.js"></script>
+    <script src="../alasoft/views/appitemsview.js"></script>
+    <script src="../alasoft/views/freeview.js"></script>
+
+    <script src="../alasoft/widgets/widget.js"></script>
+    <script src="../alasoft/widgets/list.js"></script>
+    <script src="../alasoft/widgets/grid.js"></script>
+    <script src="../alasoft/widgets/treelist.js"></script>
+    <script src="../alasoft/widgets/treeitems.js"></script>
+    <script src="../alasoft/widgets/form.js"></script>
+    <script src="../alasoft/widgets/toolbar.js"></script>
+    <script src="../alasoft/widgets/button.js"></script>
+    <script src="../alasoft/widgets/label.js"></script>
+    <script src="../alasoft/widgets/popup.js"></script>
+
+    <script src="../app/app.js"></script>
+    <script src="../app/apptoolbar.js"></script>
+    <script src="../app/appitems.js"></script>
+    <script src="../app/escuela.js"></script>
+    <script src="../app/materia.js"></script>
+    <script src="../app/modalidad.js"></script>
+    <script src="../app/año.js"></script>
+    <script src="../app/turno.js"></script>
+    <script src="../app/curso.js"></script>
+    <script src="../app/alumno.js"></script>
+
+</head>
+
+<style>
+    .list-template {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        height: 0px;
+    }
+    
+    .horizontal-container {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .fill-horizontal-container {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .fill-container {
+        flex: 1;
+    }
+    
+    .fill-vertical-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .list-view {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        height: 0px;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div id="app-toolbar" class="height-25 light-gray"></div>
+        <div id="app-body">
+            <div id="app-items" style="display: none"> </div>
+            <div id="app-view"> </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(function() {
+
+        new FreeView({
+            components: {
+                form: {
+                    componentClass: Form,
+                    colCount: 2,
+                    formData: {
+                        escuela: "San Clemente",
+                        año: 2022
+                    },
+                    height: 70,
+                    items: [{
+                        dataField: "escuela",
+                    }, {
+                        dataField: "año",
+                        cssClass: "width-150"
+                    }]
+                },
+                label: {
+                    text: "Año Lectivo"
+                },
+                cursosTree: {
+                    componentClass: TreeList,
+                    keyExpr: "id",
+                    dataSource: cursosDataSource(),
+                    columns: [{
+                        dataField: "id",
+                        visible: false
+                    }, {
+                        dataField: "descripcion"
+                    }],
+                },
+                alumnosGrid: {
+                    componentClass: Grid,
+                    keyExpr: "id",
+                    dataSource: alumnosDataSource(),
+                    columns: [{
+                            dataField: "id",
+                            visible: false
+                        },
+                        "apellido",
+                        "nombres"
+                    ]
+                }
+            },
+
+            template: () => new TemplateBuilder("fill-vertical-container height-0 padding-15")
+                .addChild("light-white padding-15 margin-bottom-10 -form")
+                .add("fill-horizontal-container height-0")
+                .add("fill-vertical-container light-blue")
+                .addChild("fill-container -cursosTree")
+                .up()
+                .add("fill-vertical-container")
+                .add("fill-container -alumnosGrid margin-left-10")
+                .build()
+
+
+            /*            
+                        template: () => new TemplateBuilder("fill-vertical-container height-0 padding-15")
+                            .addChild("margin-bottom-5 -label ")
+                            .addChild("light-white padding-15 margin-bottom-10 -form")
+                            .addChild("fill-container -tree")
+                            .build()
+            */
+
+            /*            
+                        template: () => new TemplateBuilder("fill-horizontal-container height-0")
+                            .add("fill-vertical-container padding-15")
+                            .addChild("margin-bottom-5 -label ")
+                            .addChild("light-white padding-15 margin-bottom-10 -form ")
+                            .addChild("fill-container -tree")
+                            .build()
+            */
+        }).render();
+    })
+
+    function alumnosDataSource() {
+        const dataSource = [];
+        for (let i = 0; i < 100; i++) {
+            dataSource.push({
+                id: i,
+                apellido: "apellido " + i,
+                nombres: "nombres " + i
+            })
+        }
+        return dataSource;
+    }
+
+    function cursosDataSource() {
+        return [{
+                id: "4",
+                descripcion: "Cursos"
+            }, {
+                id: "5",
+                parent: "4",
+                descripcion: "Sociales, 4 A, mañana"
+            },
+
+            {
+                id: "9",
+                parent: "5",
+                descripcion: "Materias"
+            },
+
+            {
+                id: "10",
+                parent: "9",
+                descripcion: "Matemática"
+            },
+
+            {
+                id: "11",
+                parent: "9",
+                descripcion: "Introducción a la Física"
+            },
+
+            {
+                id: "12",
+                parent: "9",
+                descripcion: "Ntixs"
+            },
+
+            {
+                id: "13",
+                parent: "9",
+                descripcion: "Informática"
+            },
+
+
+            {
+                id: "6",
+                parent: "4",
+                descripcion: "Sociales, 5 A,  mañana"
+            }, {
+                id: "7",
+                parent: "4",
+                descripcion: "Economía, 5 B,  mañana"
+            },
+
+            {
+                id: "8",
+                parent: "4",
+                descripcion: "Economía, 4 B,  mañana"
+            },
+
+
+
+            {
+                id: "14",
+                parent: "8",
+                descripcion: "Materias"
+            },
+
+            {
+                id: "15",
+                parent: "14",
+                descripcion: "Matemática"
+            },
+
+            {
+                id: "16",
+                parent: "14",
+                descripcion: "Introducción a la Física"
+            },
+
+            {
+                id: "17",
+                parent: "14",
+                descripcion: "Ntixs"
+            },
+
+            {
+                id: "18",
+                parent: "14",
+                descripcion: "Informática"
+            },
+
+
+        ]
+    }
+</script>
