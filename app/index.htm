@@ -13,77 +13,172 @@
     </script>
 
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.common.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.teal.light.css" />
-    <!--
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.blue.light.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.teal.light.compact.css" />
 
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.teal.light.css" />        
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.carmine.compact.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.compact.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.teal.light.css" />        
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.material.blue.light.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.darkmoon.css" />
- -->
+    <link rel="stylesheet" type="text/css" href="../alasoft/css/styles.css" />
 
-    <link rel="stylesheet" type="text/css" href="../alasoft/css/newstyles.css" />
 
     <script src="https://cdn3.devexpress.com/jslib/21.1.6/js/dx.all.js"></script>
 
     <script src="../alasoft/base/utils.js"></script>
     <script src="../alasoft/base/baseobject.js"></script>
     <script src="../alasoft/base/template.js"></script>
-    <script src="../alasoft/base/templatebuilder.js"></script>
     <script src="../alasoft/base/component.js"></script>
-
-    <script src="../alasoft/datasource/datasource.js"></script>
-    <script src="../alasoft/datasource/arraydatasource.js"></script>
-
-    <script src="../alasoft/views/view.js"></script>
-    <script src="../alasoft/views/listview.js"></script>
-    <script src="../alasoft/views/formlistview.js"></script>
-    <script src="../alasoft/views/popupview.js"></script>
-    <script src="../alasoft/views/formview.js"></script>
-    <script src="../alasoft/views/lookupview.js"></script>
-    <script src="../alasoft/views/appitemsview.js"></script>
-
     <script src="../alasoft/widgets/widget.js"></script>
     <script src="../alasoft/widgets/list.js"></script>
     <script src="../alasoft/widgets/grid.js"></script>
-    <script src="../alasoft/widgets/treelist.js"></script>
-    <script src="../alasoft/widgets/treeitems.js"></script>
     <script src="../alasoft/widgets/form.js"></script>
     <script src="../alasoft/widgets/toolbar.js"></script>
     <script src="../alasoft/widgets/button.js"></script>
+    <script src="../alasoft/widgets/contextMenu.js"></script>
     <script src="../alasoft/widgets/label.js"></script>
     <script src="../alasoft/widgets/popup.js"></script>
 
-    <script src="../app/app.js"></script>
-    <script src="../app/apptoolbar.js"></script>
-    <script src="../app/appitems.js"></script>
-    <script src="../app/escuela.js"></script>
-    <script src="../app/materia.js"></script>
-    <script src="../app/modalidad.js"></script>
-    <script src="../app/año.js"></script>
-    <script src="../app/turno.js"></script>
-    <script src="../app/curso.js"></script>
-    <script src="../app/alumno.js"></script>
+    <script src="../alasoft/views/view.js"></script>
+    <script src="../alasoft/views/listview.js"></script>
+    <script src="../alasoft/views/masterdetailview.js"></script>
+    <script src="../alasoft/views/masterdetailhorizontalview.js"></script>
+    <script src="../alasoft/views/popupview.js"></script>
+    <script src="../alasoft/views/entryview.js"></script>
+    <script src="../alasoft/views/restview.js"></script>
+    <script src="../alasoft/views/formview.js"></script>
+
+    <script src="app.js"></script>
 
 </head>
 
 <body>
-    <div id="app">
+    <div class="vertical-100pct blue-light" id="app">
         <div id="app-toolbar"></div>
-        <div id="app-body">
-            <div id="app-items"> </div>
-            <div id="app-view"> </div>
+        <div class="horizontal-full-0 gray-light">
+            <div class="vertical width-250 mar" style="margin-right: -10px;" id="app-items"></div>
+            <div class="vertical-full-100pct" id="app-view"></div>
         </div>
     </div>
 </body>
 
+<template id="template-list">
+    <div class="vertical-full-0 padding-15">        
+        <div class="-label margin-bottom-5"></div>
+        <div class="-list full"></div>
+        <div class="-context-menu"></div>
+    </div>
+</template>
+
+<template id="template-master-detail-horizontal">    
+    <div class="vertical-full-100pct">
+        <div class="padding-15">
+            <div class="-label margin-bottom-5"></div>
+            <div class="-toolbar margin-bottom-5" style="padding-left: 10px;"></div>
+        </div>
+        <div class="horizontal-full-0" style="margin-top: -25px;">
+            <div class="-master vertical-full"></div>
+            <div class="-detail vertical-full" style="margin-left: -20px;"></div>        
+        </div>            
+    </div>
+</template>
+
+<template id="template-master-detail-vertical">    
+    <div class="vertical-full-100pct">
+        <div class="-master vertical-full-0"></div>
+        <div class="-detail vertical-full-0"></div>        
+    </div>            
+</template>
+
+<template id="template-form">
+    <div class="vertical-full-100pct">
+        <div class="-form vertical-full"></div>
+        <div class="-toolbar"></div>
+    </div>
+</template>
+
 <script>
     $(function() {
-        App.Start();
+
+        //list();
+        //masterDetail();
+        form();
+
     })
+
+    function form() {
+        new FormView({
+            popup: {
+                title: "Persona"
+            },
+            form: {
+                items: [
+                    "apellido",
+                    "nombres"
+                ]
+            }
+        }).render();
+    }
+
+    function list() {
+
+        new ListView({
+            label: {
+                text: "Personas"
+            },
+            list: {
+                keyExpr: "id",
+                dataSource: dataSource(100),
+            }
+        }).render()
+
+    }
+
+    function masterDetail() {
+
+        new MasterDetailHorizontalView({
+            label: {
+                text: "Escuela"
+            },
+            toolbar: {
+                items: [{
+                    widget: "dxDropDownBox",
+                    location: "before",
+                    options: {
+                        text: "San Clemente, Secundaria",
+                        width: 200,
+                        showText: true
+                    }
+                }]
+            },
+            master: {
+                label: {
+                    text: "Cursos / Materias",
+                },
+                list: {
+                    keyExpr: "id",
+                    dataSource: dataSource(100)
+                }
+
+            },
+            detail: {
+                label: {
+                    text: "Alumnos",
+                },
+                list: {
+                    keyExpr: "id",
+                    dataSource: dataSource(500)
+                }
+            }
+        }).render()
+
+
+    }
+
+    function dataSource(rows) {
+        let dataSource = [];
+        for (let i = 0; i < rows; i++) {
+            dataSource.push({
+                id: i,
+                firstName: "firstName " + i,
+                lastName: "lastName " + i
+            });
+        }
+        return dataSource;
+    }
 </script>

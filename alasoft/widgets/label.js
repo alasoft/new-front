@@ -6,7 +6,7 @@ class Label extends Component {
     }
 
     render() {
-        this.element().text(Utils.Evaluate(this.configuration().text));
+        this.element().text(Utils.Evaluate(this.configuration().text)).css("font-size", "small");
     }
 
     extraConfiguration() {

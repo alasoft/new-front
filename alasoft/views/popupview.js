@@ -1,9 +1,5 @@
 class PopupView extends View {
 
-    addComponents() {
-        super.addComponents();
-    }
-
     render() {
         this.popup().show();
     }
@@ -22,9 +18,19 @@ class PopupView extends View {
     defaultConfiguration() {
         return Utils.Merge(super.defaultConfiguration(), {
             popup: {
-                view: this
+                view: this,
+                onShown: e => this.focus()
             }
         })
     }
+
+    close() {
+        this.popup().close();
+    }
+
+    originalTitle() {
+        return this.configuration().popup.title
+    }
+
 
 }

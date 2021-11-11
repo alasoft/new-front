@@ -1,24 +1,30 @@
 class Template {
 
-    constructor(element) {
-        this._element = element;
-    }
-
-    findElementByClass(className) {
-        return this._element.find("." + className);
-    }
-
-    render(parent) {
-        parent.empty();
-        this._element.appendTo(parent);
-    }
-
-    html() {
-        return this._element.html();
+    constructor(name) {
+        this._name = name;
     }
 
     element() {
+        if (this._element == undefined) {
+            this._element = this.defineElement();
+        }
         return this._element;
+    }
+
+    defineElement() {
+        return $($("#template-" + this._name).html());
+    }
+
+    find(className) {
+        return this.element().find("." + className);
+    }
+
+    render(parent) {
+        parent.append(this.element());
+    }
+
+    html() {
+        return this.element().html();
     }
 
 }

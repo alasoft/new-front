@@ -37,4 +37,10 @@ class Utils {
         }
     }
 
+    static ArrayNoNulls(array) {
+        return array.filter(
+            e => e != undefined && e != null
+        )
+    }
+
 }

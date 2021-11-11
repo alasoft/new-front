@@ -1,0 +1,324 @@
+{
+    "account": {
+        "accountGroup": {
+            "accountgroupingcode": "string",
+            "accountsWithInvestors": [{
+                "accountIdentifierValue": "string",
+                "investors": [{
+                    "accountType": "string",
+                    "activationType": "ACTIVE",
+                    "addressDetails": [{
+                        "addressLine1": "string",
+                        "addressLine2": "string",
+                        "addressLine3": "string",
+                        "addressType": "MAIN",
+                        "city": "string",
+                        "country": "string",
+                        "postalCode": "string",
+                        "postbox": "string",
+                        "stateProvince": "string"
+                    }],
+                    "administratorCode": "string",
+                    "billingReference": "string",
+                    "birthDate": "2021-11-10T17:15:06.453Z",
+                    "citizenship": "string",
+                    "comments": "string",
+                    "contactDetails": [{
+                        "contactName": "string",
+                        "email": "string",
+                        "faxNumber": "string",
+                        "mobileNumber": "string",
+                        "phoneNumber": "string",
+                        "publicDetails": true,
+                        "title": "string",
+                        "website": "string"
+                    }],
+                    "countryOfResidence": "string",
+                    "dateOfIncorporation": "2021-11-10T17:15:06.453Z",
+                    "deceasedDate": "2021-11-10T17:15:06.453Z",
+                    "englishLongName": "string",
+                    "englishShortName": "string",
+                    "ext": {
+                        "birthplace": "string",
+                        "businessActivity": "COMMERCIAL",
+                        "businessSize": "MICRO_ENTITY",
+                        "incomeTaxStatus": "TAX_REGISTERED",
+                        "registrationArea": "string",
+                        "registrationNumber": "string",
+                        "rpcPlace": "string",
+                        "taxPayerIdType": "CUIT",
+                        "vatStatus": "FINAL_TAXPAYER"
+                    },
+                    "firstName": "string",
+                    "id": 0,
+                    "investorClassification1Code": "string",
+                    "investorClassification2Code": "string",
+                    "investorCode": "string",
+                    "isInterestedParty": true,
+                    "isParticipantInvestor": true,
+                    "isPrimaryOwner": true,
+                    "lastUpdateTimestamp": 0,
+                    "legalStatus": "LIQUIDATED",
+                    "legalStatusDate": "2021-11-10T17:15:06.453Z",
+                    "longName": "string",
+                    "mainIdentifier": "string",
+                    "mainIdentifierType": "LEI",
+                    "participantCode": "string",
+                    "preferredLanguageOfCommunication": "string",
+                    "preferredMethodOfCommunication": "string",
+                    "registrationCountry": "string",
+                    "shortName": "string",
+                    "stakeholderIdentifiers": [{
+                        "countryOfIssuance": "string",
+                        "expiryDate": "2021-11-10T17:15:06.453Z",
+                        "identifier": "string",
+                        "issuingEntity": "string",
+                        "registrationDate": "2021-11-10T17:15:06.453Z",
+                        "type": "LEI",
+                        "typeValue": "string"
+                    }],
+                    "stakeholderType": "Individual",
+                    "suspensionReason": "string",
+                    "taxDomicile": "string",
+                    "taxPayerIdentifier": "string",
+                    "validFrom": "2021-11-10T17:15:06.453Z",
+                    "validTo": "2021-11-10T17:15:06.453Z"
+                }]
+            }],
+            "deactivationDate": "2021-11-10T17:15:06.453Z",
+            "id": 0,
+            "name": "string",
+            "owner": {
+                "countryOfIssuance": "string",
+                "expiryDate": "2021-11-10T17:15:06.453Z",
+                "identifier": "string",
+                "issuingEntity": "string",
+                "registrationDate": "2021-11-10T17:15:06.453Z",
+                "type": "LEI",
+                "typeValue": "string"
+            }
+        },
+        "accountName": "string",
+        "activationType": "ACTIVE",
+        "cashAccount": [{
+            "autoLiquiditySweepout": true,
+            "cashAccountExtension": {
+                "issuer": {
+                    "activationType": "ACTIVE",
+                    "addressDetails": [{
+                        "addressLine1": "string",
+                        "addressLine2": "string",
+                        "addressLine3": "string",
+                        "addressType": "MAIN",
+                        "city": "string",
+                        "country": "string",
+                        "postalCode": "string",
+                        "postbox": "string",
+                        "stateProvince": "string"
+                    }],
+                    "administratorCode": "string",
+                    "billingReference": "string",
+                    "comments": "string",
+                    "contactDetails": [{
+                        "contactName": "string",
+                        "email": "string",
+                        "faxNumber": "string",
+                        "mobileNumber": "string",
+                        "phoneNumber": "string",
+                        "publicDetails": true,
+                        "title": "string",
+                        "website": "string"
+                    }],
+                    "dateOfInception": "2021-11-10T17:15:06.453Z",
+                    "englishLongName": "string",
+                    "englishShortName": "string",
+                    "extension": {
+                        "businessActivity": 0,
+                        "businessSize": 0
+                    },
+                    "firstName": "string",
+                    "id": 0,
+                    "industryClassification1Code": "string",
+                    "industryClassification2Code": "string",
+                    "lastUpdateTimestamp": 0,
+                    "legalForm": "string",
+                    "legalStatus": "LIQUIDATED",
+                    "legalStatusDate": "2021-11-10T17:15:06.453Z",
+                    "longName": "string",
+                    "mainIdentifier": "string",
+                    "mainIdentifierType": "LEI",
+                    "maintainingEntity": true,
+                    "notaryReference": "string",
+                    "participantCode": "string",
+                    "preferredLanguageOfCommunication": "string",
+                    "preferredMethodOfCommunication": "string",
+                    "registrationCountry": "string",
+                    "shortName": "string",
+                    "stakeholderIdentifiers": [{
+                        "countryOfIssuance": "string",
+                        "expiryDate": "2021-11-10T17:15:06.453Z",
+                        "identifier": "string",
+                        "issuingEntity": "string",
+                        "registrationDate": "2021-11-10T17:15:06.453Z",
+                        "type": "LEI",
+                        "typeValue": "string"
+                    }],
+                    "stakeholderType": "Individual",
+                    "taxDomicile": "string",
+                    "taxPayerIdentifier": "string",
+                    "validFrom": "2021-11-10T17:15:06.454Z",
+                    "validTo": "2021-11-10T17:15:06.454Z"
+                }
+            },
+            "cashAccountType": "MIRROR",
+            "coupled": true,
+            "externalAccountNumber": "string",
+            "id": 0,
+            "paymentBank": {
+                "countryOfIssuance": "string",
+                "expiryDate": "2021-11-10T17:15:06.454Z",
+                "identifier": "string",
+                "issuingEntity": "string",
+                "registrationDate": "2021-11-10T17:15:06.454Z",
+                "type": "LEI",
+                "typeValue": "string"
+            },
+            "paymentSystem": "string",
+            "unsolicitedDebitAllowed": true
+        }],
+        "closingDate": "2021-11-10T17:15:06.454Z",
+        "coOwners": [{
+            "owner": {
+                "countryOfIssuance": "string",
+                "expiryDate": "2021-11-10T17:15:06.454Z",
+                "identifier": "string",
+                "issuingEntity": "string",
+                "registrationDate": "2021-11-10T17:15:06.454Z",
+                "type": "LEI",
+                "typeValue": "string"
+            },
+            "primaryOwner": true,
+            "rightToDispose": true
+        }],
+        "holder": {
+            "countryOfIssuance": "string",
+            "expiryDate": "2021-11-10T17:15:06.454Z",
+            "identifier": "string",
+            "issuingEntity": "string",
+            "registrationDate": "2021-11-10T17:15:06.454Z",
+            "type": "LEI",
+            "typeValue": "string"
+        },
+        "id": 0,
+        "identifier": {
+            "accountIdentifierType": "PROPRIETARY",
+            "identifier": "string"
+        },
+        "interestedParty": [{
+            "investor": {
+                "countryOfIssuance": "string",
+                "expiryDate": "2021-11-10T17:15:06.454Z",
+                "identifier": "string",
+                "issuingEntity": "string",
+                "registrationDate": "2021-11-10T17:15:06.454Z",
+                "type": "LEI",
+                "typeValue": "string"
+            },
+            "type": "REPRESENTATIVE"
+        }],
+        "isCorporateAction": true,
+        "jointOwners": [{
+            "owner": {
+                "countryOfIssuance": "string",
+                "expiryDate": "2021-11-10T17:15:06.454Z",
+                "identifier": "string",
+                "issuingEntity": "string",
+                "registrationDate": "2021-11-10T17:15:06.454Z",
+                "type": "LEI",
+                "typeValue": "string"
+            },
+            "primaryOwner": true,
+            "proportion": 0
+        }],
+        "lastUpdateTimestamp": 0,
+        "linkedIssuerLinkedAccountId": "string",
+        "nominee": {
+            "countryOfIssuance": "string",
+            "expiryDate": "2021-11-10T17:15:06.454Z",
+            "identifier": "string",
+            "issuingEntity": "string",
+            "registrationDate": "2021-11-10T17:15:06.454Z",
+            "type": "LEI",
+            "typeValue": "string"
+        },
+        "openingDate": "2021-11-10T17:15:06.454Z",
+        "operator": {
+            "countryOfIssuance": "string",
+            "expiryDate": "2021-11-10T17:15:06.454Z",
+            "identifier": "string",
+            "issuingEntity": "string",
+            "registrationDate": "2021-11-10T17:15:06.454Z",
+            "type": "LEI",
+            "typeValue": "string"
+        },
+        "securitiesAccount": [{
+            "alternateId": "string",
+            "billingReference": "string",
+            "caDistributionAccount": {
+                "accountIdentifierType": "PROPRIETARY",
+                "identifier": "string"
+            },
+            "comments": "string",
+            "externalCashAccounts": [{
+                "accountName": "string",
+                "accountNumber": "string",
+                "addresseeBic": "string",
+                "beneficiaryBic": "string",
+                "beneficiaryName": "string",
+                "currencies": [
+                    "string"
+                ],
+                "default": true,
+                "iban": "string",
+                "intermediaryBic": "string",
+                "operator": {
+                    "countryOfIssuance": "string",
+                    "expiryDate": "2021-11-10T17:15:06.454Z",
+                    "identifier": "string",
+                    "issuingEntity": "string",
+                    "registrationDate": "2021-11-10T17:15:06.454Z",
+                    "type": "LEI",
+                    "typeValue": "string"
+                },
+                "paymentInstructionType": "string",
+                "receiverBic": "string",
+                "relatedReference": "string",
+                "state": "ACTIVE"
+            }],
+            "id": 0,
+            "isCorporateActionISONotification": true,
+            "isDefaultLinkedIssuerCsdMirrorAccount": true,
+            "issuer": {
+                "countryOfIssuance": "string",
+                "expiryDate": "2021-11-10T17:15:06.454Z",
+                "identifier": "string",
+                "issuingEntity": "string",
+                "registrationDate": "2021-11-10T17:15:06.454Z",
+                "type": "LEI",
+                "typeValue": "string"
+            },
+            "securitiesAccountExtension": {
+                "deliveriesReqApproval": true,
+                "participateInFCE": true,
+                "permanentTaxExemption": true,
+                "quarterlyStatementByPost": true,
+                "quarterlyStmtUndeliveryDate": "2021-11-10T17:15:06.454Z",
+                "reportToAFIP": true,
+                "securitiesLending": true
+            },
+            "securitiesAccountType": "BENEFICIAL_OWNER_ACCOUNT",
+            "taxdomicile": "string"
+        }]
+    },
+    "taxDomicile": "string"
+}

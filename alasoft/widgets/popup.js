@@ -15,11 +15,11 @@ class Popup extends Widget {
     contentTemplate(e) {
         this.view().renderComponents();
         e.append(this.view().template().element());
-        e.addClass("contenido-vertical")
+        e.addClass("vertical")
             //        e.css("background-color", "green")
             //        e.css("margin", "-10px")
             //        e.parent().css("padding", "0px")
-        e.parent().css("background-color", "thistle");
+            //        e.parent().css("background-color", "thistle");
     }
 
     view() {
@@ -35,6 +35,10 @@ class Popup extends Widget {
         element = $("<div id='" + App.POPUP_PREFFIX_ID + "-" + i + "'>").dxPopup(this.configuration());
         $("#" + App.APP_ID).append(element);
         return element;
+    }
+
+    setTitle(title) {
+        this.setProperty("title", title);
     }
 
     show() {
@@ -59,7 +63,7 @@ class Style {
             .css("background-color", App.POPUP_BACKGROUND_COLOR);
 
         e
-            .addClass("contenido-vertical")
+            .addClass("vertical")
             .css("height", "100%")
             .css("padding", "5px");
 

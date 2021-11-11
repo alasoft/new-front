@@ -1,4 +1,4 @@
-class FormView extends PopupView {
+class FormView extends RestView {
 
     addComponents() {
         super.addComponents();
@@ -16,51 +16,24 @@ class FormView extends PopupView {
         return new Form(this.configuration().form);
     }
 
-    buttonSave() {
-        return {
-            widget: "dxButton",
-            location: "after",
-            options: {
-                icon: "save",
-                text: "Graba",
-                onClick: e => this.onButtonSaveClick()
-            }
-        }
-    }
-
-    buttonCancel() {
-        return {
-            widget: "dxButton",
-            location: "after",
-            options: {
-                icon: "close",
-                text: "Cancela",
-                onClick: e => this.onButtonCancelaClick()
-            }
-        }
-    }
-
-    defineTemplate() {
-        return new TemplateBuilder("form-view")
-            .addChild("-form form")
-            .addChild("-toolbar toolbar top-margin-0")
-            .build();
-    }
-
     defaultConfiguration() {
         return Utils.Merge(super.defaultConfiguration(), {
-            toolbar: {
-                element: this.template().findElementByClass("-toolbar"),
-                items: [
-                    this.buttonSave(),
-                    this.buttonCancel()
-                ],
-                visible: true
-            },
             form: {
-                element: this.template().findElementByClass("-form")
+                element: this.template().find("-form")
             },
         })
+    }
+
+    templateName() {
+        return "form";
+    }
+
+    focus() {
+        this.form().focus()
+    }
+
+    data() {
+        return this.form().data();
     }
 
 }

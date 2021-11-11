@@ -26,17 +26,10 @@ class Component extends BaseObject {
     defineConfiguration() {
         return Utils.Merge(
             this.defaultConfiguration(),
-            this.extraConfiguration(),
-            this._externalConfiguration
-        );
+            this.extraConfiguration ? this.extraConfiguration() : undefined,
+            this._externalConfiguration)
     }
 
     defaultConfiguration() {}
-
-    extraConfiguration() {}
-
-    static Render() {
-        this.Instance().render();
-    }
 
 }

@@ -11,6 +11,10 @@ class Form extends Widget {
         }
     }
 
+    data() {
+        return this.getProperty("formData");
+    }
+
     getEditor(dataField) {
         return this.instance().getEditor(dataField);
     }

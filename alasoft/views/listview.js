@@ -4,6 +4,7 @@ class ListView extends View {
         super.addComponents();
         this.addComponent(this.label());
         this.addComponent(this.list());
+        this.addComponent(this.contextMenu());
     }
 
     label() {
@@ -14,11 +15,7 @@ class ListView extends View {
     }
 
     defineLabel() {
-        return new Label(this.labelConfiguration())
-    }
-
-    labelConfiguration() {
-        return Utils.Merge(this.configuration().label);
+        return new Label(this.configuration().label);
     }
 
     list() {
@@ -36,26 +33,143 @@ class ListView extends View {
         return Grid;
     }
 
-    listExtraConfiguration() {}
+    contextMenu() {
+        if (this._contextMenu == undefined) {
+            this._contextMenu = this.defineContextMenu();
+        }
+        return this._contextMenu;
+    }
 
-    defineTemplate() {
-        return new TemplateBuilder("list-view")
-            .addChild("-label label")
-            .addChild("-toolbar toolbar right-align bottom-margin-5")
-            .addChild("-list list")
-            .build();
+    defineContextMenu() {
+        return new ContextMenu(this.configuration().contextMenu);
     }
 
     defaultConfiguration() {
         return Utils.Merge(super.defaultConfiguration(), {
             label: {
-                element: this.template().findElementByClass("-label")
+                element: this.template().find("-label")
             },
             list: {
-                element: this.template().findElementByClass("-list"),
-                dataSource: this.class().DataSource()
+                element: this.template().find("-list"),
+                dataSource: this.class().DataSource(),
+                onContentReady: e => this.listOnContentReady(e),
+                onToolbarPreparing: e => this.listOnToolbarPreparing(e),
+                onRowDblClick: e => this.listOnRowDblClick(e)
+            },
+            contextMenu: {
+                element: this.template().find("-context-menu")
+            },
+            operations: {
+                allowAdding: true,
+                allowEditing: true,
+                allowDeleting: false
             }
         })
+    }
+
+    listSetToolbarItems(e) {
+        var items = e.toolbarOptions.items;
+        this.toolbarItems().forEach(
+            item => items.unshift(item))
+    }
+
+    toolbarItems() {
+        return Utils.ArrayNoNulls(
+            [this.buttonAdd()]
+        )
+    }
+
+    buttonAdd() {
+        if (this.allowAdding()) {
+            return {
+                widget: "dxButton",
+                location: "before",
+                options: {
+                    icon: "add",
+                    hint: "Agrega",
+                    onClick: e => this.add(),
+                }
+            }
+        }
+    }
+
+    setContextMenuItems(e) {
+        this.contextMenu().setItems(this.contextMenuItems());
+    }
+
+    contextMenuItems() {
+        return Utils.ArrayNoNulls(
+            [
+                this.itemAdd(),
+                this.itemEdit(),
+                this.itemDelete(),
+            ]
+        )
+    }
+
+    itemAdd() {
+        if (this.allowAdding()) {
+            return {
+                text: "Agrega",
+                onClick: e => this.add(),
+            }
+        }
+    }
+
+    itemEdit() {
+        if (this.allowEditing()) {
+            return {
+                text: "Modifica",
+                onClick: e => this.edit(),
+            }
+        }
+    }
+
+    itemDelete() {
+        if (this.allowDeleting()) {
+            return {
+                text: "Delete",
+                onClick: e => this.delete(),
+            }
+        }
+    }
+
+    allowAdding() {
+        return Utils.Evaluate(this.operations().allowAdding) == true;
+    }
+
+    allowEditing() {
+        return Utils.Evaluate(this.operations().allowEditing) == true && this.list().hasRows();
+    }
+
+    allowDeleting() {
+        return Utils.Evaluate(this.operations().allowDeleting) == true && this.list().hasRows();
+    }
+
+    operations() {
+        return this.configuration().operations;
+    }
+
+    add() {}
+
+    edit() {}
+
+    templateName() {
+        return "list";
+    }
+
+    listOnContentReady(e) {
+        this.setContextMenuItems();
+    }
+
+    listOnToolbarPreparing(e) {
+        this.listSetToolbarItems(e);
+    }
+
+    listOnRowDblClick(e) {
+        if (this.allowEditing(e)) {
+            this.edit();
+        }
     }
 
     static DataSource() {
@@ -65,6 +179,8 @@ class ListView extends View {
         return this._DataSource;
     }
 
-    static DefineDataSource() {}
+    static DefineDataSource() {
+
+    }
 
 }

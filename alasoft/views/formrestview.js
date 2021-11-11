@@ -1,0 +1,3 @@
+class FormRestView extends FormView {
+
+}

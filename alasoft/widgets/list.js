@@ -17,6 +17,29 @@ class List extends Widget {
         )
     }
 
+    rows() {
+        return this.instance().getVisibleRows();
+    }
+
+    rowCount() {
+        return this.rows().length;
+    }
+
+    hasRows() {
+        return 0 < this.rowCount();
+    }
+
+    refresh(id) {
+        this.instance().refresh().then(
+            () => id ? this.focusRowById(id) : undefined
+        )
+    }
+
+    focusRowById(id) {
+        this.setProperty("focusedRowKey", id);
+        this.instance().navigateToRow(id);
+    }
+
     static SmallFont() {
         return {
             onCellPrepared: o => o.cellElement
@@ -28,6 +51,5 @@ class List extends Widget {
             }
         }
     }
-
 
 }
